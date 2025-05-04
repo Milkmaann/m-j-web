@@ -9,6 +9,49 @@
 <!-- Černý navigační pruh -->
 <div style="display: flex; justify-content: flex-end; padding: 20px; background-color: #333;">
     <nav style="background-color: #333; padding: 20px 20px; position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; box-sizing: border-box;">
+<head>
+<style>
+/* Hamburger styl */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+  nav ul.show {
+    display: flex;
+  }
+}
+</style>
+</head>
+
+<body>
+<!-- Přidej tento blok do navigace -->
+<div class="hamburger" onclick="toggleMenu()">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
 <div style="display: flex; justify-content: space-between; align-items: center;">
         <div style="color: white; font-size: 1.1rem; font-weight: bold;">
            <a href="životopis.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Mgr. Ladislav Viščur</a>
@@ -186,9 +229,12 @@
 </script>  <footer>
         <p>&copy; 2025 Mgr. Ladislav Viščur - Práce s dětmi na spektru</p>
     </footer>
-
-</body>
-
+<script>
+function toggleMenu() {
+  const menu = document.querySelector('nav ul');
+  menu.classList.toggle('show');
+}
+</script>
 <style>
 .parallax {
   transform: translateY(0);
@@ -204,5 +250,8 @@ window.addEventListener('scroll', () => {
   });
 });
 </script>
+
+</body>
+
 
 </html>
