@@ -85,6 +85,34 @@
             font-size: 0.9em;
             color: #555;
         }
+	    @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .hero, .main-content {
+        flex-direction: column;
+    }
+}
     </style>
 </head>
 <body>
