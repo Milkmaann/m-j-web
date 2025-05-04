@@ -164,6 +164,18 @@
         }
     }
 </style>
+    <style>
+    .reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.6s ease;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
 </head>
 <body>
     <nav>
@@ -207,28 +219,28 @@
             </div>
         </section>
 
-        <section>
+        <section class="reveal>
             <h2>Současné zaměstnání</h2>
             <p>
                 Pracuji jako třídní učitel u dětí s poruchou autistického spektra. Každý den vytvářím bezpečné a podnětné prostředí, které podporuje jejich rozvoj a sebevědomí.
             </p>
         </section>
 
-        <section>
+        <section class="reveal>
             <h2>Přesvědčení</h2>
             <p>
                 Jsem přesvědčen, že děti na spektru je třeba systematicky vést ke komunikaci a porozumění. Každé dítě toho může dosáhnout, pokud se přizpůsobíme jeho individuálním potřebám.
             </p>
         </section>
 
-        <section>
+        <section class="reveal>
             <h2>Letní programy a hlídání</h2>
             <p>
                 V minulosti jsem organizoval letní programy pro děti na spektru: hry, výlety, smyslové aktivity a relaxaci, abychom si užili léto naplno.
             </p>
         </section>
 
-        <section>
+        <section class="reveal>
             <img src="autism.jpg" alt="Autismus" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
         </section>
     </main>
@@ -242,5 +254,19 @@
             document.querySelector('.mobile-menu').classList.toggle('show');
         }
     </script>
+    <script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // animuje jen při prvním zobrazení
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(section => {
+        observer.observe(section);
+    });
+</script>
 </body>
 </html>
