@@ -55,7 +55,7 @@
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(5px);
         }
-        
+
         /* Hamburger menu styles */
         .hamburger {
             display: none;
@@ -86,7 +86,7 @@
             font-size: 1rem;
             font-weight: 600;
         }
-        
+
         /* Mobile menu visibility */
         nav ul.mobile-menu {
             display: none;
@@ -110,6 +110,12 @@
             .hamburger {
                 display: flex;
             }
+            nav ul.mobile-menu {
+                display: none;
+            }
+            nav ul.show.mobile-menu {
+                display: flex;
+            }
         }
     </style>
 </head>
@@ -129,6 +135,7 @@
                     <a href="životopis.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Mgr. Ladislav Viščur</a>
                 </div>
 
+                <!-- Tradiční menu pro desktop -->
                 <ul style="list-style-type: none; display: flex; gap: 30px; margin: 0; padding: 0;">
                     <li><a href="index.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Úvod</a></li>
                     <li><a href="životopis.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">O mně</a></li>
@@ -187,18 +194,16 @@
                 V minulosti jsem trávil letní měsíce smysluplně s dětmi na spektru – organizoval jsem hry, výlety, smyslové aktivity a relaxaci, abychom si užili léto v tom pravém slova smyslu.
             </p>
         </section>
-<section style="display: flex; justify-content: center; padding: 60px; background: linear-gradient(135deg, #f0f0f0, #ffffff);">
-        <div style="max-width: 800px; width: 100%; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2); padding: 20px;">
-            <img src="autism.jpg" alt="Hero obrázek" style="width: 100%; height: auto; border-radius: 12px; display: block;">
-        </div>
-    </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Mgr. Ladislav Viščur - Práce s dětmi na spektru</p>
     </footer>
 
-      
+    <!-- Obrázek na konci stránky -->
+    <div style="text-align: center; padding: 40px;">
+        <img src="tvuj-obrazek.jpg" alt="Obrázek na konci" style="max-width: 100%; height: auto; border-radius: 10px;">
+    </div>
 
     <script>
         function toggleMenu() {
