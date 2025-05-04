@@ -7,11 +7,45 @@
     <style>
         body {
             margin: 0;
+            padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: url('https://source.unsplash.com/1600x900/?soft,light') no-repeat center center fixed;
             background-size: cover;
             color: #333;
+
         }
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 50px 20px;
+            text-align: center;
+            position: static;
+            top: 0;
+            backdrop-filter: blur(5px);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+        }
+        section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
         nav {
             background-color: #333;
             padding: 10px 20px;
