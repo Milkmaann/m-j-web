@@ -1,193 +1,73 @@
-<!DOCTYPE html>
-<html lang="cs">
+<!DOCTYPE html><html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> - Práce s dětmi na spektru</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: url('https://source.unsplash.com/1600x900/?soft,light') no-repeat center center fixed;
-            background-size: cover;
-            color: #333;
-        }
-        header {
-            background: rgba(255, 255, 255, 0.85);
-            padding: 50px 20px;
-            text-align: center;
-            position: static;
-            top: 0;
-            backdrop-filter: blur(5px);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            margin: 10px 0 0;
-            font-size: 1.2em;
-        }
-        main {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        section {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(5px);
-        }
-        nav {
-            background-color: #333;
-            padding: 10px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            box-sizing: border-box;
-        }
-        nav .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        nav .logo a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        nav ul {
-            display: flex;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 20px;
-            cursor: pointer;
-        }
-        .hamburger div {
-            height: 4px;
-            background-color: white;
-            width: 100%;
-            border-radius: 4px;
-        }
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 10px;
-        }
-        .mobile-menu.show {
-            display: flex;
-        }
-        @media (max-width: 768px) {
-            nav ul.desktop-menu {
-                display: none;
-            }
-            .hamburger {
-                display: flex;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <a href="životopis.html">Mgr. Ladislav Viščur</a>
-            </div>
-            <ul class="desktop-menu">
-                <li><a href="index.html">Úvod</a></li>
-                <li><a href="životopis.html">O mně</a></li>
-                <li><a href="služby.html">Služby</a></li>
-                <li><a href="otázky.html">Často kladené dotazy</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
+    <div style="display: flex; justify-content: flex-end; padding: 20px; background-color: #333;">
+        <nav style="background-color: #333; padding: 20px 20px; position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; box-sizing: border-box;">
             <div class="hamburger" onclick="toggleMenu()">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
-        </div>
-        <ul class="mobile-menu">
-            <li><a href="index.html">Úvod</a></li>
-            <li><a href="životopis.html">O mně</a></li>
-            <li><a href="služby.html">Služby</a></li>
-            <li><a href="otázky.html">Často kladené dotazy</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-    </nav>
-
-    <section style="display: flex; align-items: center; padding: 60px; background-color: #fafafa; margin-top: 80px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="color: white; font-size: 1.1rem; font-weight: bold;">
+                    <a href="životopis.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Mgr. Ladislav Viščur</a>
+                </div>
+                <ul style="list-style-type: none; display: flex; gap: 30px; margin: 0; padding: 0;">
+                    <li><a href="index.html">Úvod</a></li>
+                    <li><a href="životopis.html">O mně</a></li>
+                    <li><a href="služby.html">Služby</a></li>
+                    <li><a href="otázky.html">Často kladené dotazy</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+                <ul class="mobile-menu">
+                    <li><a href="index.html">Úvod</a></li>
+                    <li><a href="životopis.html">O mně</a></li>
+                    <li><a href="služby.html">Služby</a></li>
+                    <li><a href="otázky.html">Často kladené dotazy</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <section style="display: flex; align-items: center; padding: 60px; background-color: #fafafa;">
         <div style="flex: 1; padding-right: 40px;">
             <header>
                 <h1>Volnočasové aktivity pro děti s poruchou autistického spektra</h1>
                 <p>Vaše důvěra – moje poslání</p>
             </header>
-            <p style="font-family: 'Arial', sans-serif; font-size: 1.2rem; color: #555; line-height: 1.6;">
-                Od roku 2016 se specializuji na práci s dětmi s poruchou autistického spektra. Pomáhám dětem i dospělým objevovat své možnosti, růst a nacházet radost v každodenním životě.
-            </p>
+            <p>Od roku 2016 se specializuji na práci s dětmi s poruchou autistického spektra. Pomáhám dětem i dospělým objevovat své možnosti, růst a nacházet radost v každodenním životě.</p>
         </div>
         <div style="flex: 1;">
-            <img src="krajina.jpg" alt="Hero obrázek" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);">
+            <img src="krajina.jpg" alt="Hero obrázek" class="responsive-image">
         </div>
     </section>
-
     <main>
         <section id="Současné zaměstnání">
             <h2>Současné zaměstnání</h2>
-            <p>
-                Pracuji jako třídní učitel u dětí s poruchou autistického spektra. Každý den se snažím vytvářet bezpečné a podnětné prostředí, které podporuje jejich rozvoj, sebevědomí a radost z objevování světa.
-            </p>
+            <p>Pracuji jako třídní učitel u dětí s poruchou autistického spektra. Každý den se snažím vytvářet bezpečné a podnětné prostředí, které podporuje jejich rozvoj, sebevědomí a radost z objevování světa.</p>
         </section>
         <section>
             <h2>Přesvědčení</h2>
-            <p>
-                „Jsem přesvědčen, že děti na spektru je třeba systematicky vést ke komunikaci a porozumění, protože schopnost komunikovat je nezbytnou součástí života. Každé dítě toho může dosáhnout, pokud je míra a forma komunikace vhodně nastavena a přizpůsobena jeho individuálním potřebám.“
-            </p>
+            <p>„Jsem přesvědčen, že děti na spektru je třeba systematicky vést ke komunikaci a porozumění, protože schopnost komunikovat je nezbytnou součástí života. Každé dítě toho může dosáhnout, pokud je míra a forma komunikace vhodně nastavena a přizpůsobena jeho individuálním potřebám.“</p>
         </section>
         <section id="Letní programy a hlídání">
             <h2>Letní programy a hlídání</h2>
-            <p>
-                V minulosti jsem trávil letní měsíce smysluplně s dětmi na spektru – organizoval jsem hry, výlety, smyslové aktivity a relaxaci, abychom si užili léto v tom pravém slova smyslu.
-            </p>
+            <p>V minulosti jsem trávil letní měsíce smysluplně s dětmi na spektru – organizoval jsem hry, výlety, smyslové aktivity a relaxaci, abychom si užili léto v tom pravém slova smyslu.</p>
         </section>
         <section style="display: flex; justify-content: center; padding: 60px; background: linear-gradient(135deg, #f0f0f0, #ffffff);">
-            <div style="max-width: 800px; width: 100%; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2); padding: 20px;">
-                <img src="autism.jpg" alt="Hero obrázek" style="width: 100%; height: auto; border-radius: 12px; display: block;">
+            <div class="photo-container">
+                <img src="autism.jpg" alt="Hero obrázek" class="responsive-image">
             </div>
         </section>
     </main>
-
     <footer>
         <p>&copy; 2025 Mgr. Ladislav Viščur - Práce s dětmi na spektru</p>
     </footer>
-
     <script>
         function toggleMenu() {
             const menu = document.querySelector('.mobile-menu');
