@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Práce s dětmi na spektru</title>
-    <style>
+   <style>
     body {
         margin: 0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background: url('https://source.unsplash.com/1600x900/?soft,light') no-repeat center center fixed;
         background-size: cover;
         color: #333;
-        line-height: 1.6;
+        line-height: 1.7;
     }
     nav {
         background-color: #333;
@@ -66,14 +66,14 @@
         display: flex;
     }
     main {
-        max-width: 900px;
+        max-width: 1200px;
         margin: 140px auto 60px;
-        padding: 0 20px;
+        padding: 0 40px;
     }
     section {
         background: rgba(255, 255, 255, 0.95);
-        padding: 30px;
-        margin-bottom: 40px;
+        padding: 40px;
+        margin-bottom: 50px;
         border-radius: 16px;
         box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     }
@@ -81,19 +81,20 @@
         margin-top: 0;
         font-weight: 700;
         color: #222;
+        text-align: center;
     }
     section h1 {
-        font-size: 2.2rem;
-        margin-bottom: 15px;
+        font-size: 2.4rem;
+        margin-bottom: 20px;
     }
     section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 12px;
+        font-size: 2rem;
+        margin-bottom: 16px;
     }
     section p {
-        font-size: 1.1rem;
-        margin-bottom: 15px;
-        text-align: justify;
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        text-align: center;
     }
     .hero {
         display: flex;
@@ -102,13 +103,15 @@
         gap: 30px;
     }
     .hero-text {
-        flex: 1 1 350px;
+        flex: 1 1 100%;
+        text-align: center;
     }
     .hero-image {
-        flex: 1 1 300px;
+        flex: 1 1 100%;
+        text-align: center;
     }
     .hero-image img {
-        width: 100%;
+        width: 80%;
         border-radius: 16px;
         box-shadow: 0 8px 24px rgba(0,0,0,0.2);
     }
@@ -126,8 +129,18 @@
         .hamburger {
             display: flex;
         }
+        main {
+            padding: 0 20px;
+        }
         section p {
             text-align: left;
+            font-size: 1.1rem;
+        }
+        .hero-text, .hero-image {
+            flex: 1 1 100%;
+        }
+        .hero-image img {
+            width: 100%;
         }
     }
 </style>
