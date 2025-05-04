@@ -106,13 +106,19 @@
             display: flex;
         }
         @media (max-width: 768px) {
-            nav ul.desktop-menu {
-                display: none;
-            }
-            .hamburger {
-                display: flex;
-            }
-        }
+    section[style*="display: flex; align-items: center;"] {
+        flex-direction: column;
+        padding: 20px;
+    }
+    section[style*="display: flex; align-items: center;"] > div {
+        padding: 0;
+    }
+    section[style*="display: flex; align-items: center;"] img {
+        margin-top: 20px;
+        width: 100%;
+        height: auto;
+    }
+}
     </style>
 </head>
 <body>
