@@ -3,50 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> - Práce s dětmi na spektru</title>
+    <title>Práce s dětmi na spektru</title>
     <style>
         body {
             margin: 0;
-            padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: url('https://source.unsplash.com/1600x900/?soft,light') no-repeat center center fixed;
             background-size: cover;
             color: #333;
-        }
-        header {
-            background: rgba(255, 255, 255, 0.85);
-            padding: 50px 20px;
-            text-align: center;
-            position: static;
-            top: 0;
-            backdrop-filter: blur(5px);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            margin: 10px 0 0;
-            font-size: 1.2em;
-        }
-        main {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        section {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(5px);
         }
         nav {
             background-color: #333;
@@ -58,12 +22,12 @@
             z-index: 1000;
             box-sizing: border-box;
         }
-        nav .nav-container {
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        nav .logo a {
+        .logo a {
             color: white;
             text-decoration: none;
             font-size: 1rem;
@@ -71,7 +35,7 @@
         }
         nav ul {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             margin: 0;
             padding: 0;
             list-style: none;
@@ -80,51 +44,69 @@
             color: white;
             text-decoration: none;
             font-size: 1rem;
-            font-weight: 600;
         }
         .hamburger {
             display: none;
             flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 20px;
             cursor: pointer;
         }
         .hamburger div {
-            height: 4px;
-            background-color: white;
-            width: 100%;
-            border-radius: 4px;
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 4px 0;
         }
         .mobile-menu {
             display: none;
             flex-direction: column;
-            gap: 15px;
-            margin-top: 10px;
+            background-color: #333;
         }
         .mobile-menu.show {
             display: flex;
         }
+        main {
+            max-width: 1000px;
+            margin: 120px auto 40px;
+            padding: 0 20px;
+        }
+        section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+        .hero-text {
+            flex: 1 1 300px;
+        }
+        .hero-image {
+            flex: 1 1 300px;
+        }
+        .hero-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            background: rgba(255, 255, 255, 0.85);
+        }
         @media (max-width: 768px) {
-    section[style*="display: flex; align-items: center;"] {
-        flex-direction: column;
-        padding: 20px;
-    }
-    section[style*="display: flex; align-items: center;"] > div {
-        padding: 0;
-    }
-    section[style*="display: flex; align-items: center;"] img {
-        margin-top: 20px;
-        width: 100%;
-        height: auto;
-    }
-    nav {
-        position: fixed;
-    }
-    main, section {
-        margin-top: 120px; /* aby se obsah neposunul pod fixní nav */
-    }
-}
+            nav ul.desktop-menu {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body>
@@ -137,7 +119,7 @@
                 <li><a href="index.html">Úvod</a></li>
                 <li><a href="životopis.html">O mně</a></li>
                 <li><a href="služby.html">Služby</a></li>
-                <li><a href="otázky.html">Často kladené dotazy</a></li>
+                <li><a href="otázky.html">Dotazy</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
             <div class="hamburger" onclick="toggleMenu()">
@@ -150,49 +132,48 @@
             <li><a href="index.html">Úvod</a></li>
             <li><a href="životopis.html">O mně</a></li>
             <li><a href="služby.html">Služby</a></li>
-            <li><a href="otázky.html">Často kladené dotazy</a></li>
+            <li><a href="otázky.html">Dotazy</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
     </nav>
 
-    <section style="display: flex; align-items: center; padding: 60px; background-color: #fafafa; margin-top: 80px;">
-        <div style="flex: 1; padding-right: 40px;">
-            <header>
+    <main>
+        <section class="hero">
+            <div class="hero-text">
                 <h1>Volnočasové aktivity pro děti s poruchou autistického spektra</h1>
                 <p>Vaše důvěra – moje poslání</p>
-            </header>
-            <p style="font-family: 'Arial', sans-serif; font-size: 1.2rem; color: #555; line-height: 1.6;">
-                Od roku 2016 se specializuji na práci s dětmi s poruchou autistického spektra. Pomáhám dětem i dospělým objevovat své možnosti, růst a nacházet radost v každodenním životě.
-            </p>
-        </div>
-        <div style="flex: 1;">
-            <img src="krajina.jpg" alt="Hero obrázek" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);">
-        </div>
-    </section>
+                <p>
+                    Od roku 2016 se specializuji na práci s dětmi na spektru. Pomáhám jim objevovat své možnosti, růst a nacházet radost v každodenním životě.
+                </p>
+            </div>
+            <div class="hero-image">
+                <img src="krajina.jpg" alt="Hero obrázek">
+            </div>
+        </section>
 
-    <main>
-        <section id="Současné zaměstnání">
+        <section>
             <h2>Současné zaměstnání</h2>
             <p>
-                Pracuji jako třídní učitel u dětí s poruchou autistického spektra. Každý den se snažím vytvářet bezpečné a podnětné prostředí, které podporuje jejich rozvoj, sebevědomí a radost z objevování světa.
+                Pracuji jako třídní učitel u dětí s poruchou autistického spektra. Každý den vytvářím bezpečné a podnětné prostředí, které podporuje jejich rozvoj a sebevědomí.
             </p>
         </section>
+
         <section>
             <h2>Přesvědčení</h2>
             <p>
-                „Jsem přesvědčen, že děti na spektru je třeba systematicky vést ke komunikaci a porozumění, protože schopnost komunikovat je nezbytnou součástí života. Každé dítě toho může dosáhnout, pokud je míra a forma komunikace vhodně nastavena a přizpůsobena jeho individuálním potřebám.“
+                Jsem přesvědčen, že děti na spektru je třeba systematicky vést ke komunikaci a porozumění. Každé dítě toho může dosáhnout, pokud se přizpůsobíme jeho individuálním potřebám.
             </p>
         </section>
-        <section id="Letní programy a hlídání">
+
+        <section>
             <h2>Letní programy a hlídání</h2>
             <p>
-                V minulosti jsem trávil letní měsíce smysluplně s dětmi na spektru – organizoval jsem hry, výlety, smyslové aktivity a relaxaci, abychom si užili léto v tom pravém slova smyslu.
+                V minulosti jsem organizoval letní programy pro děti na spektru: hry, výlety, smyslové aktivity a relaxaci, abychom si užili léto naplno.
             </p>
         </section>
-        <section style="display: flex; justify-content: center; padding: 60px; background: linear-gradient(135deg, #f0f0f0, #ffffff);">
-            <div style="max-width: 800px; width: 100%; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2); padding: 20px;">
-                <img src="autism.jpg" alt="Hero obrázek" style="width: 100%; height: auto; border-radius: 12px; display: block;">
-            </div>
+
+        <section>
+            <img src="autism.jpg" alt="Autismus" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
         </section>
     </main>
 
@@ -202,8 +183,7 @@
 
     <script>
         function toggleMenu() {
-            const menu = document.querySelector('.mobile-menu');
-            menu.classList.toggle('show');
+            document.querySelector('.mobile-menu').classList.toggle('show');
         }
     </script>
 </body>
