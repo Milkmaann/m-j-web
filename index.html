@@ -55,27 +55,60 @@
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(5px);
         }
+        
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .hamburger div {
+            height: 4px;
+            background-color: white;
+            width: 100%;
+            border-radius: 4px;
+        }
+        nav ul {
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            list-style-type: none;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        /* Mobile menu visibility */
+        nav ul.mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+        }
+        nav ul.mobile-menu li a {
+            padding: 10px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+        nav ul.show {
+            display: flex;
+        }
+
+        /* Mobile styles */
         @media (max-width: 768px) {
             nav ul {
-                flex-direction: column;
-                gap: 10px;
-                align-items: flex-start;
+                display: none;
             }
-            section {
-                padding: 20px;
-            }
-            header h1 {
-                font-size: 1.8em;
-            }
-            header p {
-                font-size: 1em;
-            }
-            img {
-                width: 100%;
-                height: auto;
-            }
-            .hero, .main-content {
-                flex-direction: column;
+            .hamburger {
+                display: flex;
             }
         }
     </style>
@@ -84,12 +117,13 @@
     <!-- Černý navigační pruh -->
     <div style="display: flex; justify-content: flex-end; padding: 20px; background-color: #333;">
         <nav style="background-color: #333; padding: 20px 20px; position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; box-sizing: border-box;">
-            <!-- Přidej tento blok do navigace -->
+            <!-- Hamburger ikona pro mobilní zobrazení -->
             <div class="hamburger" onclick="toggleMenu()">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
+            
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <div style="color: white; font-size: 1.1rem; font-weight: bold;">
                     <a href="životopis.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Mgr. Ladislav Viščur</a>
@@ -101,6 +135,15 @@
                     <li><a href="služby.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Služby</a></li>
                     <li><a href="otázky.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Často kladené dotazy</a></li>
                     <li><a href="kontakt.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Kontakt</a></li>
+                </ul>
+
+                <!-- Mobile menu (hidden by default) -->
+                <ul class="mobile-menu">
+                    <li><a href="index.html">Úvod</a></li>
+                    <li><a href="životopis.html">O mně</a></li>
+                    <li><a href="služby.html">Služby</a></li>
+                    <li><a href="otázky.html">Často kladené dotazy</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>
             </div>
         </nav>
@@ -144,46 +187,24 @@
                 V minulosti jsem trávil letní měsíce smysluplně s dětmi na spektru – organizoval jsem hry, výlety, smyslové aktivity a relaxaci, abychom si užili léto v tom pravém slova smyslu.
             </p>
         </section>
-    </main>
-
-    <section style="display: flex; justify-content: center; padding: 60px; background: linear-gradient(135deg, #f0f0f0, #ffffff);">
+<section style="display: flex; justify-content: center; padding: 60px; background: linear-gradient(135deg, #f0f0f0, #ffffff);">
         <div style="max-width: 800px; width: 100%; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2); padding: 20px;">
             <img src="autism.jpg" alt="Hero obrázek" style="width: 100%; height: auto; border-radius: 12px; display: block;">
         </div>
     </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 Mgr. Ladislav Viščur - Práce s dětmi na spektru</p>
     </footer>
 
+      
+
     <script>
         function toggleMenu() {
-            const menu = document.querySelector('nav ul');
+            const menu = document.querySelector('.mobile-menu');
             menu.classList.toggle('show');
         }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const sections = document.querySelectorAll('section');
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target); // animace proběhne jen jednou
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            const scrolled = window.scrollY;
-            document.querySelectorAll('.parallax').forEach(el => {
-                el.style.transform = `translateY(${scrolled * 0.2}px)`;
-            });
-        });
     </script>
 </body>
 </html>
