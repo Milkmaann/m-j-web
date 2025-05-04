@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Černý navigační pruh -->
+<div class="parallax" style="display: flex; justify-content: flex-end; padding: 20px; background-color: #333;">
+    <nav  style="background-color: #333; padding: 20px 20px; position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; box-sizing: border-box;">
+<div  style="display: flex; justify-content: space-between; align-items: center;">
+        <div  style="color: white; font-size: 1.1rem; font-weight: bold;">
+            Mgr. Ladislav Viščur
+        </div>
+
+        <ul  style="list-style-type: none; display: flex; gap: 30px; margin: 0; padding: 0;">
+<li><a href="index.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Úvod</a></li>
+
+            <li><a href="životopis.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">O mně</a></li>
+            <li><a href="služby.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Služby</a></li>
+            <li><a href="otázky.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Často kladené dotazy</a></li>
+            <li><a href="kontakt.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Kontakt</a></li>
+        </ul>
+    </nav>
+</div>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        nav {
+            background-color: #333;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .image-container {
+            margin: 120px auto 40px auto; /* nahoře kvůli záhlaví, dole trochu mezera */
+            max-width: 75%; /* zmenšený obrázek */
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2); /* stín */
+            border-radius: 16px; /* zaoblení rohů */
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+    <!-- Obrázek -->
+    <div class="image-container">
+        <img src="letní.jpg" alt="Letní aktivity">
+    </div>
+
+</body>
+<style>
+.parallax {
+  transform: translateY(0);
+  transition: transform 0.2s ease-out;
+}
+</style>
+
+<script>
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  document.querySelectorAll('.parallax').forEach(el => {
+    el.style.transform = `translateY(${scrolled * 0.2}px)`;
+  });
+});
+</script>
+
+</html>

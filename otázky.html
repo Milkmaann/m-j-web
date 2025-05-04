@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Často kladené otázky</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #e0eafc, #cfdef3);
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    nav {
+        background-color: #333;
+        padding: 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav div {
+        color: white;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+    nav ul li a:hover {
+        color: #6a82fb;
+    }
+    .main-container {
+        display: flex;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        width: 90%;
+        max-width: 1200px;
+        margin: 120px auto 40px auto;
+        animation: fadeIn 1.5s ease;
+    }
+    .faq-container {
+        width: 60%;
+        padding: 40px;
+    }
+    h1 {
+        color: #333;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        border-bottom: 3px solid #6a82fb;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+    .faq-item {
+        background: #f1f4ff;
+        border-radius: 12px;
+        margin: 15px 0;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: transform 0.3s, background 0.3s;
+        position: relative;
+    }
+    .faq-item:hover {
+        background: #d6dfff;
+        transform: translateY(-3px);
+    }
+    .faq-question {
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        margin-top: 10px;
+        transition: max-height 0.6s ease, opacity 0.6s ease;
+        white-space: pre-wrap;
+    }
+    .faq-item.active .faq-answer {
+        max-height: 500px;
+        opacity: 1;
+        animation: typewriter 1.2s steps(40) 1;
+    }
+    @keyframes typewriter {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+    .image-container {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background: linear-gradient(45deg, #89f7fe, #66a6ff);
+    }
+    .image-container img {
+        width: 100%;
+        max-width: 350px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        transition: transform 0.4s;
+    }
+    .image-container img:hover {
+        transform: scale(1.05);
+    }
+    .extra-element {
+        margin-top: 30px;
+        padding: 20px;
+        background: linear-gradient(45deg, #89f7fe, #66a6ff);
+        border-radius: 12px;
+        color: #fff;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+<body><nav>
+    <div>Mgr. Ladislav Viščur</div>
+    <ul>
+        <li><a href="index.html">Úvod</a></li>
+        <li><a href="životopis.html">O mně</a></li>
+        <li><a href="služby.html">Služby</a></li>
+        <li><a href="otázky.html">Často kladené dotazy</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+</nav><div class="main-container">
+    <div class="faq-container">
+        <h1>Často kladené otázky</h1>
+        <div class="faq-item">
+            <div class="faq-question">Jak se můžeme přihlásit?</div>
+            <div class="faq-answer">Tento web funguje pomocí moderních webových technologií jako HTML, CSS a JavaScript, aby nabídl poutavý uživatelský zážitek.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Kde mohu získat více informací?</div>
+            <div class="faq-answer">Více informací najdete v sekci kontakt, nebo nás můžete přímo oslovit prostřednictvím formuláře níže.</div>
+        </div>
+
+	<div class="faq-item">
+            <div class="faq-question">Moje dítě si těžko zvyká na cizí lidi. je to opravdu dobrý nápad?</div>
+            <div class="faq-answer">Ano, tento web je plně zdarma a je navržen tak, aby byl přístupný pro všechny uživatele.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Je možné přihlásit i dítě s jinou diagnózou, popřípadě bez diagnózy?</div>
+            <div class="faq-answer">Ano, tento web je plně zdarma a je navržen tak, aby byl přístupný pro všechny uživatele.</div>
+        </div>
+	
+	<div class="faq-item">
+            <div class="faq-question">Jak probíhá letní tábor?</div>
+            <div class="faq-answer">Ano, tento web je plně zdarma a je navržen tak, aby byl přístupný pro všechny uživatele.</div>
+        </div>
+
+	<div class="faq-item">
+            <div class="faq-question">Je zajištěna strava?</div>
+            <div class="faq-answer">Ano, tento web je plně zdarma a je navržen tak, aby byl přístupný pro všechny uživatele.</div>
+        </div>
+	<div class="faq-item">
+            <div class="faq-question">Jaký je týdenní plán?</div>
+            <div class="faq-answer">Ano, tento web je plně zdarma a je navržen tak, aby byl přístupný pro všechny uživatele.</div>
+        </div>
+	<div class="extra-element">
+        Přihlaste se k odběru novinek a získejte exkluzivní obsah!
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="letní.jpg" alt="Inspirativní obrázek">
+</div>
+
+</div><script>
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+</script>
+<style>
+.parallax {
+  transform: translateY(0);
+  transition: transform 0.2s ease-out;
+}
+</style>
+
+<script>
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  document.querySelectorAll('.parallax').forEach(el => {
+    el.style.transform = `translateY(${scrolled * 0.2}px)`;
+  });
+});
+</script>
+
+</body>
+</html>

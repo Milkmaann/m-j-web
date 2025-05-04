@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Černý navigační pruh -->
+<div class="parallax" style="display: flex; justify-content: flex-end; padding: 20px; background-color: #333;">
+    <nav  style="background-color: #333; padding: 20px 20px; position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; box-sizing: border-box;">
+<div class="parallax" style="display: flex; justify-content: space-between; align-items: center;">
+        <div  style="color: white; font-size: 1.1rem; font-weight: bold;">
+            Mgr. Ladislav Viščur
+        </div>
+
+        <ul  style="list-style-type: none; display: flex; gap: 30px; margin: 0; padding: 0;">
+	    <li><a href="index.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Úvod</a></li>
+            <li><a href="životopis.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">O mně</a></li>
+            <li><a href="služby.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Služby</a></li>
+            <li><a href="otázky.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Často kladené dotazy</a></li>
+            <li><a href="kontakt.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Kontakt</a></li>
+        </ul>
+    </nav>
+</div>
+    <title>Kontakt a Ceník</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .info {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        .details {
+            flex: 1;
+        }
+        .details p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .details i {
+            margin-right: 8px;
+            color: #555;
+        }
+        .photo {
+            flex: 0 0 200px;
+            height: 200px;
+            background: url('losos.jpg') center/cover no-repeat;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+        .photo:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 2px dashed #666;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .fade-in {
+            animation: fadeIn 2s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container fade-in">
+        <h1>Kontakt a Ceník</h1>
+        <div class="info">
+            <div class="details">
+                <p><strong>Jméno:</strong> Mgr. Ladislav Viščur</p>
+                <p><strong>IČ:</strong> 12345678</p>
+                <p><i class="fas fa-sms"></i><strong>Telefon:</strong> pouze SMS - +420 720 246 958</p>
+                <p><i class="fas fa-envelope"></i><strong>E-mail:</strong> ladislav.viscur@centrum.cz</p>
+                <p><strong>Adresa:</strong> 1. máje 97/25 Liberec, 5. patro, dveře 208</p>
+                <p><em>Nejsem poskytovatel zdravotnických služeb.</em></p>
+            </div>
+            <div class="photo"></div>
+        </div>
+        <hr>
+        <h2>Ceník služeb</h2>
+        <ul>
+            <li>Služba 1 - popis</li>
+            <li>Služba 2 - popis</li>
+            <li>Služba 3 - popis</li>
+        </ul>
+    </div>
+</body>
+</html>
