@@ -12,33 +12,39 @@ body {
     background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
     color: #333;
 }
+
+/* Záhlaví */
 .navbar {
-    background-color: #000;
+    background-color: #000; /* Černé pozadí pro navbar */
     color: white;
     padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
+    position: fixed; /* Fixní pozice na stránce */
+    width: 100%; /* Zajistí, že se roztáhne přes celou šířku */
+    top: 0; /* Umístí navbar na horní část stránky */
+    left: 0; /* Zajistí, že navbar bude vlevo */
     display: flex;
     align-items: center;
-    height: 40px;
-    box-sizing: border-box;
-    z-index: 1000;
+    height: 40px; /* Nastavení výšky */
+    box-sizing: border-box; /* Zajistí, že padding nebude zvyšovat velikost */
+    z-index: 1000; /* Nastaví, že navbar bude vždy nad jinými elementy */
 }
+
 .navbar .brand {
     font-size: 1.2rem;
     font-weight: bold;
 }
+
+/* Hlavní obsah stránky */
 header {
-    margin-top: 0; /* kvůli fixnímu pruhu */
-    
+    margin-top: 0; /* Kdyby byla fixní navigace, přidej zde margin-top pro odsazení obsahu */
 }
+
 header h1 {
     margin: 0;
     font-size: 1.8rem;
     color: #333;
 }
+
 nav {
     display: flex;
     justify-content: center;
@@ -46,6 +52,7 @@ nav {
     gap: 15px;
     margin: 20px 0;
 }
+
 nav button {
     background: white;
     border: none;
@@ -59,10 +66,12 @@ nav button {
     gap: 8px;
     font-weight: 600;
 }
+
 nav button:hover {
     transform: translateY(-5px);
     background: #e0ebf5;
 }
+
 section {
     display: none;
     max-width: 900px;
@@ -73,41 +82,50 @@ section {
     box-shadow: 0 8px 30px rgba(0,0,0,0.1);
     animation: fadeIn 0.8s ease;
 }
+
 section.active {
     display: block;
 }
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
 h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #2a4d69;
 }
+
 .item {
     margin-bottom: 20px;
 }
+
 .item h3 {
     margin: 0 0 5px;
     color: #4da8da;
 }
+
+/* Zápatí stránky */
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    position: fixed; /* Fixní pozice pro zápatí */
+    bottom: 0; /* Umístí zápatí na spodní část stránky */
+    width: 100%; /* Zajistí, že se zápatí roztáhne přes celou šířku stránky */
     text-align: center;
     padding: 10px 0;
     color: #777;
     font-size: 0.9rem;
     background: white;
 }
+
 </style>
 </head>
 <body>
 
 <header style="background: #000; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
     <div style="font-size: 1.2rem; font-weight: bold;">Mgr. Ladislav Viščur</div>
+    <!-- Navigační odkazy -->
     <ul style="list-style-type: none; display: flex; gap: 30px; margin: 0; padding: 0;">
         <li><a href="index.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Úvod</a></li>
         <li><a href="životopis.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">O mně</a></li>
@@ -118,9 +136,11 @@ footer {
 </header>
 
 <h1 style="text-align: center; margin: 30px 0; font-size: 2rem; color: #333;">Profesionální životopis</h1>
+
 <div style="text-align: center; margin: 20px 0;">
     <img src="já.jpg" alt="Mgr. Ladislav Viščur" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
 </div>
+
 <nav>
     <button onclick="showSection('vzdělání')"><i class="fas fa-graduation-cap"></i> Vzdělání</button>
     <button onclick="showSection('praxe')"><i class="fas fa-briefcase"></i> Praxe</button>
@@ -170,33 +190,4 @@ footer {
         <p>Aktivizační pracovník; Centrum LIRA Liberec</p>
     </div>
     <div class="item">
-        <h3>2024–současnost</h3>
-        <p>Lektor volnočasových aktivit; organizace programů, poradenství</p>
-    </div>
-</section>
-
-<section id="kurzy">
-    <h2>Kurzy a výcviky</h2>
-    <div class="item">
-        <h3>2019</h3>
-        <p>Objektové programování C# - OOP; Itnetwork</p>
-    </div>
-    <div class="item">
-        <h3>2019</h3>
-        <p>Lektor primární prevence; Prospe z. s.</p>
-    </div>
-</section>
-
-<footer>
-    &copy; 2025 Mgr. Ladislav Viščur
-</footer>
-
-<script>
-function showSection(id) {
-    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-}
-</script>
-
-</body>
-</html>
+        <h3>2024–současnost
