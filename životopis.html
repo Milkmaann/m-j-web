@@ -12,26 +12,24 @@ body {
     background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
     color: #333;
 }
-.navbar {
-    background-color: #000;
-    color: white;
-    padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    height: 40px;
-    box-sizing: border-box;
-    z-index: 1000;
-}
+
 .navbar .brand {
     font-size: 1.2rem;
     font-weight: bold;
 }
 header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #000;
+    color: white;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
 }
 header h1 {
     margin: 0;
