@@ -180,13 +180,22 @@ footer {
         <li><a href="otázky.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Často kladené dotazy</a></li>
         <li><a href="kontakt.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Kontakt</a></li>
     </ul>
-    <!-- Hamburger menu icon -->
-    <div class="hamburger" onclick="toggleMenu()">
+    <!-- Hamburger menu icon (visible only on mobile) -->
+    <div class="hamburger" onclick="toggleMenu()" style="display: none;">
         <div></div>
         <div></div>
         <div></div>
     </div>
 </header>
+
+<!-- Mobile menu (initially hidden) -->
+<ul class="mobile-menu" style="display: none; background-color: #000; list-style-type: none; padding: 10px 20px; margin: 0;">
+    <li><a href="index.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Úvod</a></li>
+    <li><a href="životopis.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">O mně</a></li>
+    <li><a href="služby.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Služby</a></li>
+    <li><a href="otázky.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Často kladené dotazy</a></li>
+    <li><a href="kontakt.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Kontakt</a></li>
+</ul>
 
 <!-- Mobile menu -->
 <ul class="mobile-menu" style="display: none; background-color: #000; list-style-type: none; padding: 10px 20px; margin: 0;">
