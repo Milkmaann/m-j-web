@@ -1,249 +1,216 @@
-👻<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interaktivní CV - Mgr. Ladislav Viščur</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style><!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interaktivní CV - Mgr. Ladislav Viščur</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Životopis - Mgr. Ladislav Viščur</title>
+
     <style>
+        /* Obecné nastavení */
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
-            color: #333;
-        }
-
-        header {
-            background: #2a4d69;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
             color: white;
-            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* Kontejner pro obsah */
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Profilová fotka */
+        img.profile {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Titulky */
+        h1, h2 {
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
         }
 
+        p {
+            line-height: 1.7;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Navigace */
         nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 20px 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
-        nav button {
-            background: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease, background 0.3s ease;
+        nav ul {
             display: flex;
-            align-items: center;
-            gap: 8px;
+            justify-content: flex-end;
+            gap: 30px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
             font-weight: 600;
         }
 
-        nav button:hover {
-            transform: translateY(-5px);
-            background: #e0ebf5;
-        }
-
-        section {
-            display: none;
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            animation: fadeIn 0.8s ease;
-        }
-
-        section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #2a4d69;
-        }
-
-        .item {
-            margin-bottom: 20px;
-        }
-
-        .item h3 {
-            margin: 0 0 5px;
-            color: #4da8da;
-        }
-
-        footer {
-            text-align: center;
-            margin: 40px 0;
-            color: #777;
-            font-size: 0.9rem;
-        }
-
-        /* Hamburgr menu styles */
         .hamburger {
             display: none;
             flex-direction: column;
             justify-content: space-between;
             width: 30px;
-            height: 25px;
+            height: 20px;
             cursor: pointer;
         }
 
         .hamburger div {
-            height: 4px;
+            height: 3px;
+            width: 100%;
             background-color: white;
-            border-radius: 4px;
         }
 
-        /* Media queries for mobile view */
+        /* Sekce */
+        section {
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: block;
+            width: fit-content;
+            margin: 30px auto;
+            padding: 10px 20px;
+            background: #4da8da;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #357ab8;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        /* Tmavý režim a přepínání sekcí */
+        body {
+            background-color: #121212;
+            color: white;
+        }
+
+        /* Média */
         @media (max-width: 768px) {
-            nav {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                background-color: #2a4d69;
-                padding: 20px;
-                position: absolute;
-                top: 70px;
-                right: 0;
-                width: 200px;
-                border-radius: 10px;
-                box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-            }
-
-            nav.active {
-                display: flex;
-            }
-
-            nav button {
-                margin-bottom: 15px;
-            }
-
             .hamburger {
                 display: flex;
-                position: absolute;
-                top: 20px;
-                left: 20px;
-                z-index: 100;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            nav.active ul {
+                display: flex;
             }
 
             section {
                 padding: 20px;
             }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Mgr. Ladislav Viščur</h1>
-        <p>Profesionální životopis</p>
-    </header>
-
-    <!-- Hamburger menu -->
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
-    <!-- Navigation -->
     <nav>
-        <button onclick="showSection('vzdělání')"><i class="fas fa-graduation-cap"></i> Vzdělání</button>
-        <button onclick="showSection('praxe')"><i class="fas fa-briefcase"></i> Praxe</button>
-        <button onclick="showSection('kurzy')"><i class="fas fa-certificate"></i> Kurzy</button>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="#home">Úvod</a></li>
+            <li><a href="#education">Vzdělání</a></li>
+            <li><a href="#experience">Praxe</a></li>
+            <li><a href="#courses">Kurzy</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
     </nav>
 
-    <!-- Sections -->
-    <section id="vzdělání" class="active">
-        <h2>Vzdělání</h2>
-        <div class="item">
-            <h3>2008–2011 | Technická univerzita v Liberci</h3>
-            <p>Obor: Matematika; Práce: Statistická analýza klimatologických časových řad</p>
-        </div>
-        <div class="item">
-            <h3>2016–2019 | Univerzita Jana Amose Komenského Praha</h3>
-            <p>Obor: Speciální pedagogika (Bc.); Práce: Analýza výskytu osob s postižením v populaci</p>
-        </div>
-        <div class="item">
-            <h3>2020–2023 | Univerzita Jana Evangelisty Purkyně v Ústí nad Labem</h3>
-            <p>Obor: Speciální pedagogika-poradenství (Mgr.); Práce: Srovnávací analýza úmrtnosti dětí s vrozenými abnormalitami</p>
-        </div>
-        <div class="item">
-            <h3>2024–současnost | Technická univerzita v Liberci</h3>
-            <p>Studium pedagogiky pro učitele 2. stupně ZŠ a SŠ (CCV)</p>
-        </div>
-    </section>
+    <div class="container">
+        <img src="já.jpg" alt="Profilová fotka" class="profile">
+        <h1>Mgr. Ladislav Viščur</h1>
+        <h2>Profesní životopis</h2>
 
-    <section id="praxe">
-        <h2>Praxe</h2>
-        <div class="item">
-            <h3>2016–2018</h3>
-            <p>Pracovník v sociálních službách; Domov Harcov Liberec</p>
-        </div>
-        <div class="item">
-            <h3>2018–2020</h3>
-            <p>Vedoucí chráněného bydlení; Domov Harcov Liberec</p>
-        </div>
-        <div class="item">
-            <h3>2020–2021</h3>
-            <p>Odborný vychovatel; Dětský diagnostický ústav Liberec</p>
-        </div>
-        <div class="item">
-            <h3>2021–2023</h3>
-            <p>Sociální pracovník a asistent pedagoga; MŠ a ZŠ Sluníčko Turnov</p>
-        </div>
-        <div class="item">
-            <h3>2021–2023</h3>
-            <p>Aktivizační pracovník; Centrum LIRA Liberec</p>
-        </div>
-        <div class="item">
-            <h3>2024–současnost</h3>
-            <p>Lektor volnočasových aktivit; organizace programů, poradenství</p>
-        </div>
-    </section>
+        <!-- Vzdělání -->
+        <section id="education">
+            <h2>Vzdělání</h2>
+            <p><strong>2008–2011:</strong> Technická univerzita v Liberci - Obor: Matematika</p>
+            <p><strong>2016–2019:</strong> Univerzita Jana Amose Komenského Praha - Obor: Speciální pedagogika (Bc.)</p>
+            <p><strong>2020–2023:</strong> Univerzita Jana Evangelisty Purkyně v Ústí nad Labem - Obor: Speciální pedagogika-poradenství (Mgr.)</p>
+            <p><strong>2024–současnost:</strong> Technická univerzita v Liberci - Studium pedagogiky pro učitele 2. stupně ZŠ</p>
+        </section>
 
-    <section id="kurzy">
-        <h2>Kurzy a výcviky</h2>
-        <div class="item">
-            <h3>2019</h3>
-            <p>Objektové programování C# - OOP; Itnetwork</p>
-        </div>
-        <div class="item">
-            <h3>2019</h3>
-            <p>Lektor primární prevence; Prospe z. s.</p>
-        </div>
-    </section>
+        <!-- Praxe -->
+        <section id="experience">
+            <h2>Praxe</h2>
+            <p><strong>2016–2018:</strong> Pracovník v sociálních službách u osob s mentálním postižením</p>
+            <p><strong>2018–2020:</strong> Vedoucí chráněného bydlení</p>
+            <p><strong>2020–2021:</strong> Odborný vychovatel - Dětský diagnostický ústav</p>
+            <p><strong>2021–2023:</strong> Sociální pracovník a asistent pedagoga</p>
+        </section>
+
+        <!-- Kurzy -->
+        <section id="courses">
+            <h2>Kurzy a výcviky</h2>
+            <p><strong>2019:</strong> Objektové programování C# - OOP; Itnetwork</p>
+            <p><strong>2019:</strong> Lektor primární prevence; Prospe z. s.</p>
+        </section>
+
+        <a class="button" href="#home">Zpět na úvodní stránku</a>
+    </div>
 
     <footer>
-        &copy; 2025 Mgr. Ladislav Viščur
+        <p>&copy; 2025 Mgr. Ladislav Viščur - Životopis</p>
     </footer>
 
     <script>
-        // Zobrazování sekcí
-        function showSection(id) {
-            document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-        }
-
-        // Toggle menu pro mobilní verzi
         function toggleMenu() {
             const nav = document.querySelector('nav');
             nav.classList.toggle('active');
@@ -251,234 +218,3 @@
     </script>
 </body>
 </html>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
-            color: #333;
-        }
-
-        header {
-            background: #2a4d69;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        /* Černý navigační pruh */
-        .navbar {
-            background-color: #333;
-            color: white;
-            padding: 20px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar .brand {
-            font-size: 1.3rem;
-            font-weight: bold;
-        }
-
-        .navbar ul {
-            list-style-type: none;
-            display: flex;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        /* Hamburger menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 25px;
-            cursor: pointer;
-        }
-
-        .hamburger div {
-            height: 4px;
-            background-color: white;
-            border-radius: 4px;
-        }
-
-        /* Media queries pro mobilní zařízení */
-        @media (max-width: 768px) {
-            .navbar ul {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                background-color: #333;
-                position: absolute;
-                top: 70px;
-                right: 0;
-                width: 100%;
-                padding: 20px 0;
-            }
-
-            .navbar ul.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-                z-index: 100;
-            }
-
-            .navbar ul li a {
-                margin: 10px 0;
-            }
-        }
-
-        /* Fotka */
-        .profile-img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            margin-right: 15px;
-        }
-
-        /* Sekce */
-        section {
-            display: none;
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            animation: fadeIn 0.8s ease;
-        }
-
-        section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #2a4d69;
-        }
-
-        .item {
-            margin-bottom: 20px;
-        }
-
-        .item h3 {
-            margin: 0 0 5px;
-            color: #4da8da;
-        }
-
-        footer {
-            text-align: center;
-            margin: 40px 0;
-            color: #777;
-            font-size: 0.9rem;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Černý navigační pruh -->
-    <div class="navbar">
-        <!-- Fotka -->
-        <img src="tvoje_fotka.jpg" alt="Mgr. Ladislav Viščur" class="profile-img">
-        
-        <div class="brand">Mgr. Ladislav Viščur</div>
-        
-        <ul>
-            <li><a href="index.html">Úvod</a></li>
-            <li><a href="životopis.html">O mně</a></li>
-            <li><a href="služby.html">Služby</a></li>
-            <li><a href="otázky.html">Často kladené dotazy</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-        
-        <!-- Hamburger menu -->
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-
-    <header>
-        <h1>Mgr. Ladislav Viščur</h1>
-        <p>Profesionální životopis</p>
-    </header>
-
-    <!-- Navigace pro sekce -->
-    <nav>
-        <button onclick="showSection('vzdělání')"><i class="fas fa-graduation-cap"></i> Vzdělání</button>
-        <button onclick="showSection('praxe')"><i class="fas fa-briefcase"></i> Praxe</button>
-        <button onclick="showSection('kurzy')"><i class="fas fa-certificate"></i> Kurzy</button>
-    </nav>
-
-    <!-- Sekce -->
-    <section id="vzdělání" class="active">
-        <h2>Vzdělání</h2>
-        <div class="item">
-            <h3>2008–2011 | Technická univerzita v Liberci</h3>
-            <p>Obor: Matematika; Práce: Statistická analýza klimatologických časových řad</p>
-        </div>
-        <div class="item">
-            <h3>2016–2019 | Univerzita Jana Amose Komenského Praha</h3>
-            <p>Obor: Speciální pedagogika (Bc.); Práce: Analýza výskytu osob s postižením v populaci</p>
-        </div>
-        <div class="item">
-            <h3>2020–2023 | Univerzita Jana Evangelisty Purkyně v Ústí nad Labem</h3>
-            <p>Obor: Speciální pedagogika-poradenství (Mgr.); Práce: Srovnávací analýza úmrtnosti dětí s vrozenými abnormalitami</p>
-        </div>
-        <div class="item">
-            <h3>2024–současnost | Technická univerzita v Liberci</h3>
-            <p>Studium pedagogiky pro učitele 2. stupně ZŠ a SŠ (CCV)</p>
-        </div>
-    </section>
-
-    <section id="praxe">
-        <h2>Praxe</h2>
-        <div class="item">
-            <h3>2016–2018</h3>
-            <p>Pracovník v sociálních službách; Domov Harcov Liberec</p>
-        </div>
-        <div class="item">
-            <h3>2018–2020</h3>
-            <p>Vedoucí chráněného bydlení; Domov Harcov Liberec</p>
-        </div>
-        <div class="item">
-            <h3>2020–2021</h3>
-            <p>Odborný vychovatel; Dětský diagnostický ústav Liberec</p>
-        </div>
-        <div class="item">
-            <h3>2021–2023</h3>
-            <p>Sociální pracovník a asistent pedagoga; MŠ a ZŠ Sluníčko Turnov</p>
-        </div>
-        <div class="item">
-            <h3>2021–2023</h3>
-            <p>Aktivizační pracovník; Centrum LIRA Liberec</p>
-        </div>
-        <div class="item">
-            <h3>2024–současnost</h3>
-            <p>Lektor volnočasových aktivit;
