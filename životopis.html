@@ -10,16 +10,18 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #121212;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
             color: white;
+            overflow-x: hidden;
         }
 
+        /* Kontejner pro obsah */
         .container {
             max-width: 900px;
             margin: 60px auto;
+            padding: 40px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            padding: 40px;
             border-radius: 16px;
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
@@ -39,7 +41,6 @@
         h1, h2 {
             text-align: center;
             margin-bottom: 10px;
-            color: #f5f5f5;
         }
 
         p {
@@ -50,7 +51,7 @@
 
         /* Navigace */
         nav {
-            background-color: #333;
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 20px;
             position: fixed;
             width: 100%;
@@ -119,7 +120,7 @@
             color: #aaa;
         }
 
-        /* Tmavý režim */
+        /* Tmavý režim a přepínání sekcí */
         body {
             background-color: #121212;
             color: white;
@@ -164,11 +165,11 @@
             <div></div>
         </div>
         <ul>
-            <li><a href="index.html">Úvod</a></li>
-            <li><a href="životopis.html">O mně</a></li>
-            <li><a href="služby.html">Služby</a></li>
-            <li><a href="otázky.html">Často kladené dotazy</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="#home">Úvod</a></li>
+            <li><a href="#education">Vzdělání</a></li>
+            <li><a href="#experience">Praxe</a></li>
+            <li><a href="#courses">Kurzy</a></li>
+            <li><a href="#contact">Kontakt</a></li>
         </ul>
     </nav>
 
@@ -202,7 +203,7 @@
             <p><strong>2019:</strong> Lektor primární prevence; Prospe z. s.</p>
         </section>
 
-        <a class="button" href="index.html">Zpět na úvodní stránku</a>
+        <a class="button" href="#home">Zpět na úvodní stránku</a>
     </div>
 
     <footer>
