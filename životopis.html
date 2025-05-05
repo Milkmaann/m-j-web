@@ -31,7 +31,7 @@ body {
     font-weight: bold;
 }
 header {
-    margin-top: 0; /* kvůli fixnímu pruhu */
+    margin-top: 60px; /* Kvůli fixnímu pruhu */
 }
 header h1 {
     margin: 0;
@@ -101,8 +101,7 @@ footer {
     font-size: 0.9rem;
     background: white;
 }
-
-/* Základní styly pro desktop menu */
+    /* Základní styly pro desktop menu */
 .desktop-menu {
     display: flex;
     gap: 30px;
@@ -173,8 +172,7 @@ footer {
 
 <header style="background: #000; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
     <div style="font-size: 1.2rem; font-weight: bold;">Mgr. Ladislav Viščur</div>
-    <!-- Desktop menu -->
-    <ul class="desktop-menu" style="list-style-type: none; display: flex; gap: 30px; margin: 0; padding: 0;">
+    <ul class="desktop-menu">
         <li><a href="index.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Úvod</a></li>
         <li><a href="životopis.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">O mně</a></li>
         <li><a href="služby.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Služby</a></li>
@@ -190,7 +188,7 @@ footer {
 </header>
 
 <!-- Mobile menu (initially hidden) -->
-<ul class="mobile-menu" style="display: none; background-color: #000; list-style-type: none; padding: 10px 20px; margin: 0;">
+<ul class="mobile-menu">
     <li><a href="index.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Úvod</a></li>
     <li><a href="životopis.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">O mně</a></li>
     <li><a href="služby.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Služby</a></li>
@@ -199,14 +197,83 @@ footer {
 </ul>
 
 <h1 style="text-align: center; margin: 30px 0; font-size: 2rem; color: #333;">Profesionální životopis</h1>
-<!-- Obsah stránky -->
+
+<nav>
+    <button onclick="showSection('vzdělání')"><i class="fas fa-graduation-cap"></i> Vzdělání</button>
+    <button onclick="showSection('praxe')"><i class="fas fa-briefcase"></i> Praxe</button>
+    <button onclick="showSection('kurzy')"><i class="fas fa-certificate"></i> Kurzy</button>
+</nav>
+
+<section id="vzdělání" class="active">
+    <h2>Vzdělání</h2>
+    <div class="item">
+        <h3>2008–2011 | Technická univerzita v Liberci</h3>
+        <p>Obor: Matematika; Práce: Statistická analýza klimatologických časových řad</p>
+    </div>
+    <div class="item">
+        <h3>2016–2019 | Univerzita Jana Amose Komenského Praha</h3>
+        <p>Obor: Speciální pedagogika (Bc.); Práce: Analýza výskytu osob s postižením v populaci</p>
+    </div>
+    <div class="item">
+        <h3>2020–2023 | Univerzita Jana Evangelisty Purkyně v Ústí nad Labem</h3>
+        <p>Obor: Speciální pedagogika-poradenství (Mgr.); Práce: Srovnávací analýza úmrtnosti dětí s vrozenými abnormalitami</p>
+    </div>
+    <div class="item">
+        <h3>2024–současnost | Technická univerzita v Liberci</h3>
+        <p>Studium pedagogiky pro učitele 2. stupně ZŠ a SŠ (CCV)</p>
+    </div>
+</section>
+
+<section id="praxe">
+    <h2>Praxe</h2>
+    <div class="item">
+        <h3>2016–2018</h3>
+        <p>Pracovník v sociálních službách; Domov Harcov Liberec</p>
+    </div>
+    <div class="item">
+        <h3>2018–2020</h3>
+        <p>Vedoucí chráněného bydlení; Domov Harcov Liberec</p>
+    </div>
+    <div class="item">
+        <h3>2020–2021</h3>
+        <p>Odborný vychovatel; Dětský diagnostický ústav Liberec</p>
+    </div>
+    <div class="item">
+        <h3>2021–2023</h3>
+        <p>Sociální pracovník a asistent pedagoga; MŠ a ZŠ Sluníčko Turnov</p>
+    </div>
+    <div class="item">
+        <h3>2021–2023</h3>
+        <p>Aktivizační pracovník; Centrum LIRA Liberec</p>
+    </div>
+    <div class="item">
+        <h3>2024–současnost</h3>
+        <p>Lektor volnočasových aktivit; organizace programů, poradenství</p>
+    </div>
+</section>
+
+<section id="kurzy">
+    <h2>Kurzy a výcviky</h2>
+    <div class="item">
+        <h3>2019</h3>
+        <p>Objektové programování C# - OOP; Itnetwork</p>
+    </div>
+    <div class="item">
+        <h3>2019</h3>
+        <p>Lektor primární prevence; Prospe z. s.</p>
+    </div>
+</section>
 
 <footer>
     &copy; 2025 Mgr. Ladislav Viščur
 </footer>
 
 <script>
-// Funkce pro otevření/zavření mobilního menu
+function showSection(id) {
+    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+
 function toggleMenu() {
     document.querySelector('.mobile-menu').classList.toggle('show');
 }
