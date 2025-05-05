@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+👻<!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
@@ -21,33 +21,96 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        nav {
+        /* Černý navigační pruh */
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 20px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-sizing: border-box;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 20px 0;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        nav button {
-            background: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease, background 0.3s ease;
+        .navbar .brand {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style-type: none;
             display: flex;
-            align-items: center;
-            gap: 8px;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
             font-weight: 600;
         }
 
-        nav button:hover {
-            transform: translateY(-5px);
-            background: #e0ebf5;
+        /* Hamburger menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
         }
 
+        .hamburger div {
+            height: 4px;
+            background-color: white;
+            border-radius: 4px;
+        }
+
+        /* Media queries pro mobilní zařízení */
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                background-color: #333;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 100%;
+                padding: 20px 0;
+            }
+
+            .navbar ul.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+                z-index: 100;
+            }
+
+            .navbar ul li a {
+                margin: 10px 0;
+            }
+        }
+
+        /* Fotka */
+        .profile-img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        /* Sekce */
         section {
             display: none;
             max-width: 900px;
@@ -89,82 +152,46 @@
             color: #777;
             font-size: 0.9rem;
         }
-
-        /* Hamburgr menu styles */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 25px;
-            cursor: pointer;
-        }
-
-        .hamburger div {
-            height: 4px;
-            background-color: white;
-            border-radius: 4px;
-        }
-
-        /* Media queries for mobile view */
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                background-color: #2a4d69;
-                padding: 20px;
-                position: absolute;
-                top: 70px;
-                right: 0;
-                width: 200px;
-                border-radius: 10px;
-                box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-            }
-
-            nav.active {
-                display: flex;
-            }
-
-            nav button {
-                margin-bottom: 15px;
-            }
-
-            .hamburger {
-                display: flex;
-                position: absolute;
-                top: 20px;
-                left: 20px;
-                z-index: 100;
-            }
-
-            section {
-                padding: 20px;
-            }
-        }
     </style>
 </head>
 <body>
+
+    <!-- Černý navigační pruh -->
+    <div class="navbar">
+        <!-- Fotka -->
+        <img src="tvoje_fotka.jpg" alt="Mgr. Ladislav Viščur" class="profile-img">
+        
+        <div class="brand">Mgr. Ladislav Viščur</div>
+        
+        <ul>
+            <li><a href="index.html">Úvod</a></li>
+            <li><a href="životopis.html">O mně</a></li>
+            <li><a href="služby.html">Služby</a></li>
+            <li><a href="otázky.html">Často kladené dotazy</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        
+        <!-- Hamburger menu -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
     <header>
         <h1>Mgr. Ladislav Viščur</h1>
         <p>Profesionální životopis</p>
     </header>
 
-    <!-- Hamburger menu -->
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
-    <!-- Navigation -->
+    <!-- Navigace pro sekce -->
     <nav>
         <button onclick="showSection('vzdělání')"><i class="fas fa-graduation-cap"></i> Vzdělání</button>
         <button onclick="showSection('praxe')"><i class="fas fa-briefcase"></i> Praxe</button>
         <button onclick="showSection('kurzy')"><i class="fas fa-certificate"></i> Kurzy</button>
     </nav>
 
-    <!-- Sections -->
+    <!-- Sekce -->
     <section id="vzdělání" class="active">
         <h2>Vzdělání</h2>
         <div class="item">
@@ -209,38 +236,4 @@
         </div>
         <div class="item">
             <h3>2024–současnost</h3>
-            <p>Lektor volnočasových aktivit; organizace programů, poradenství</p>
-        </div>
-    </section>
-
-    <section id="kurzy">
-        <h2>Kurzy a výcviky</h2>
-        <div class="item">
-            <h3>2019</h3>
-            <p>Objektové programování C# - OOP; Itnetwork</p>
-        </div>
-        <div class="item">
-            <h3>2019</h3>
-            <p>Lektor primární prevence; Prospe z. s.</p>
-        </div>
-    </section>
-
-    <footer>
-        &copy; 2025 Mgr. Ladislav Viščur
-    </footer>
-
-    <script>
-        // Zobrazování sekcí
-        function showSection(id) {
-            document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-        }
-
-        // Toggle menu pro mobilní verzi
-        function toggleMenu() {
-            const nav = document.querySelector('nav');
-            nav.classList.toggle('active');
-        }
-    </script>
-</body>
-</html>
+            <p>Lektor volnočasových aktivit;
