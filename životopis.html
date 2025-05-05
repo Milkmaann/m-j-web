@@ -143,16 +143,32 @@ footer {
 </head>
 <body>
 
-<header style="background: #000; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
-    <div style="font-size: 1.2rem; font-weight: bold;">Mgr. Ladislav Viščur</div>
-    <ul style="list-style-type: none; display: flex; gap: 30px; margin: 0; padding: 0;">
-        <li><a href="index.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Úvod</a></li>
-        <li><a href="životopis.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">O mně</a></li>
-        <li><a href="služby.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Služby</a></li>
-        <li><a href="otázky.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Často kladené dotazy</a></li>
-        <li><a href="kontakt.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Kontakt</a></li>
-    </ul>
-</header>
+<nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="životopis.html">Mgr. Ladislav Viščur</a>
+            </div>
+            <ul class="desktop-menu">
+                <li><a href="index.html">Úvod</a></li>
+                <li><a href="životopis.html">O mně</a></li>
+                <li><a href="služby.html">Služby</a></li>
+                <li><a href="otázky.html">Dotazy</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <ul class="mobile-menu">
+            <li><a href="index.html">Úvod</a></li>
+            <li><a href="životopis.html">O mně</a></li>
+            <li><a href="služby.html">Služby</a></li>
+            <li><a href="otázky.html">Dotazy</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
 
 <h1 style="text-align: center; margin: 30px 0; font-size: 2rem; color: #333;">Profesionální životopis</h1>
 <div style="text-align: center; margin: 20px 0;">
