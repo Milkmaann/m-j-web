@@ -21,9 +21,8 @@ body {
     top: 0;
     left: 0;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 40px;
-    box-sizing: border-box;
     z-index: 1000;
 }
 .navbar .brand {
@@ -101,7 +100,8 @@ footer {
     font-size: 0.9rem;
     background: white;
 }
-    /* Základní styly pro desktop menu */
+
+/* Základní styly pro desktop menu */
 .desktop-menu {
     display: flex;
     gap: 30px;
@@ -146,6 +146,9 @@ footer {
         padding: 10px 20px;
         background-color: #000;
         width: 100%;
+        position: absolute;
+        top: 60px; /* Nastavení vzdálenosti od horního okraje */
+        left: 0;
     }
 
     /* Zobrazení mobilního menu, když je aktivní */
@@ -165,13 +168,22 @@ footer {
         font-size: 1.2rem;
         font-weight: 600;
     }
+
+    /* Nastavení záhlaví, aby bylo fixní i na mobilu */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
 }
 </style>
 </head>
 <body>
 
-<header style="background: #000; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
-    <div style="font-size: 1.2rem; font-weight: bold;">Mgr. Ladislav Viščur</div>
+<header class="navbar">
+    <div class="brand">Mgr. Ladislav Viščur</div>
     <ul class="desktop-menu">
         <li><a href="index.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Úvod</a></li>
         <li><a href="životopis.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">O mně</a></li>
