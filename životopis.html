@@ -49,7 +49,13 @@
             font-weight: 600;
         }
 
-        /* Fotka */
+        /* Fotka pod navigačním pruhem */
+        .profile-img-container {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+        }
+
         .profile-img {
             border-radius: 50%;
             width: 120px;
@@ -61,7 +67,7 @@
 
         /* Hlavní obsah */
         header {
-            margin-top: 100px; /* Posuneme dolů pro zobrazení navigačního pruhu */
+            margin-top: 180px; /* Posuneme dolů pro zobrazení navigačního pruhu */
             text-align: center;
             padding: 40px;
         }
@@ -136,17 +142,56 @@
             font-size: 0.9rem;
         }
 
-        /* Mobilní verze */
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            height: 4px;
+            background-color: white;
+            border-radius: 4px;
+        }
+
+        /* Media queries for mobile view */
         @media (max-width: 768px) {
             nav {
+                display: none;
                 flex-direction: column;
                 align-items: center;
                 gap: 10px;
+                background-color: #333;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 200px;
+                border-radius: 10px;
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             }
 
-            .profile-img {
-                width: 100px;
-                height: 100px;
+            nav.active {
+                display: flex;
+            }
+
+            nav button {
+                margin-bottom: 15px;
+            }
+
+            .hamburger {
+                display: flex;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                z-index: 100;
+            }
+
+            section {
+                padding: 20px;
             }
         }
     </style>
@@ -154,18 +199,27 @@
 <body>
     <!-- Černý navigační pruh -->
     <div class="navbar">
-        <!-- Fotka -->
-        <img src="tvoje_fotka.jpg" alt="Mgr. Ladislav Viščur" class="profile-img">
-        
         <div class="brand">Mgr. Ladislav Viščur</div>
 
         <ul>
             <li><a href="index.html">Úvod</a></li>
-            <li><a href="životopis.html">O mně</a></li>
-            <li><a href="služby.html">Služby</a></li>
-            <li><a href="otázky.html">Často kladené dotazy</a></li>
+            <li><a href="o-mne.html">O mně</a></li>
+            <li><a href="sluzby.html">Služby</a></li>
+            <li><a href="otazky.html">Často kladené dotazy</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
+
+        <!-- Hamburger menu pro mobilní verzi -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- Fotka pod navigačním pruhem -->
+    <div class="profile-img-container">
+        <img src="tvoje_fotka.jpg" alt="Mgr. Ladislav Viščur" class="profile-img">
     </div>
 
     <!-- Hlavní nadpis -->
@@ -244,14 +298,3 @@
 
     <footer>
         &copy; 2025 Mgr. Ladislav Viščur
-    </footer>
-
-    <script>
-        // Zobrazování sekcí
-        function showSection(id) {
-            document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-        }
-    </script>
-</body>
-</html>
