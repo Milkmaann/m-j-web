@@ -12,8 +12,6 @@ body {
     background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
     color: #333;
 }
-
-/* Úprava pro záhlaví */
 .navbar {
     background-color: #000;
     color: white;
@@ -23,36 +21,93 @@ body {
     top: 0;
     left: 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    z-index: 1000;
+    height: 40px;
     box-sizing: border-box;
+    z-index: 1000;
 }
-
-/* Oprava zarovnání pro logo a menu */
 .navbar .brand {
     font-size: 1.2rem;
     font-weight: bold;
 }
-
-.navbar ul {
+header {
+    margin-top: 60px; /* Kvůli fixnímu pruhu */
+}
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #333;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+nav button {
+    background: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+nav button:hover {
+    transform: translateY(-5px);
+    background: #e0ebf5;
+}
+section {
+    display: none;
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    animation: fadeIn 0.8s ease;
+}
+section.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2a4d69;
+}
+.item {
+    margin-bottom: 20px;
+}
+.item h3 {
+    margin: 0 0 5px;
+    color: #4da8da;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    color: #777;
+    font-size: 0.9rem;
+    background: white;
+}
+    /* Základní styly pro desktop menu */
+.desktop-menu {
+    display: flex;
+    gap: 30px;
     margin: 0;
     padding: 0;
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-/* Pro desktop verzi */
-.desktop-menu li {
-    display: inline-block;
-}
-
-.desktop-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
+    list-style-type: none;
 }
 
 /* Skrytí hamburgeru na desktopu */
@@ -84,17 +139,13 @@ body {
         display: flex;
     }
 
-    /* Zobrazení mobilního menu, když je aktivní */
+    /* Skrytí mobilního menu na začátku */
     .mobile-menu {
         display: none;
         flex-direction: column;
-        padding: 10px 0;
+        padding: 10px 20px;
         background-color: #000;
         width: 100%;
-        position: absolute;
-        top: 60px; /* Adjust to be directly below header */
-        left: 0;
-        box-sizing: border-box;
     }
 
     /* Zobrazení mobilního menu, když je aktivní */
@@ -102,7 +153,7 @@ body {
         display: flex;
     }
 
-    /* Změna pro odkazy v mobilním menu */
+    /* Styl pro odkazy v mobilním menu */
     .mobile-menu li {
         padding: 10px 0;
         text-align: center;
@@ -114,31 +165,19 @@ body {
         font-size: 1.2rem;
         font-weight: 600;
     }
-    
-    /* Upravený styl pro mobilní záhlaví, aby bylo vše zarovnané */
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        width: 100%;
-        padding: 0 10px; /* Zmenšení okrajů */
-        box-sizing: border-box; /* Zajistí správnou šířku */
-    }
 }
 </style>
 </head>
 <body>
 
-<header class="navbar">
-    <div class="brand">Mgr. Ladislav Viščur</div>
+<header style="background: #000; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
+    <div style="font-size: 1.2rem; font-weight: bold;">Mgr. Ladislav Viščur</div>
     <ul class="desktop-menu">
-        <li><a href="index.html">Úvod</a></li>
-        <li><a href="životopis.html">O mně</a></li>
-        <li><a href="služby.html">Služby</a></li>
-        <li><a href="otázky.html">Často kladené dotazy</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="index.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Úvod</a></li>
+        <li><a href="životopis.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">O mně</a></li>
+        <li><a href="služby.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Služby</a></li>
+        <li><a href="otázky.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Často kladené dotazy</a></li>
+        <li><a href="kontakt.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Kontakt</a></li>
     </ul>
     <!-- Hamburger menu icon (visible only on mobile) -->
     <div class="hamburger" onclick="toggleMenu()">
@@ -150,11 +189,11 @@ body {
 
 <!-- Mobile menu (initially hidden) -->
 <ul class="mobile-menu">
-    <li><a href="index.html">Úvod</a></li>
-    <li><a href="životopis.html">O mně</a></li>
-    <li><a href="služby.html">Služby</a></li>
-    <li><a href="otázky.html">Často kladené dotazy</a></li>
-    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="index.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Úvod</a></li>
+    <li><a href="životopis.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">O mně</a></li>
+    <li><a href="služby.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Služby</a></li>
+    <li><a href="otázky.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Často kladené dotazy</a></li>
+    <li><a href="kontakt.html" style="color: white; text-decoration: none; font-size: 1rem; font-weight: 600;">Kontakt</a></li>
 </ul>
 
 <h1 style="text-align: center; margin: 30px 0; font-size: 2rem; color: #333;">Profesionální životopis</h1>
