@@ -141,14 +141,16 @@ footer {
 
     /* Skrytí mobilního menu na začátku */
     .mobile-menu {
-        position: absolute;
-        top: 40px;
-        display: none;
-        flex-direction: column;
-        padding: 10px 20px;
-        background-color: #000;
-        width: 100%;
-    }
+    position: absolute;
+    top: 40px; /* nebo podle skutečné výšky headeru */
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    display: none;
+    flex-direction: column;
+    padding: 10px 20px;
+    z-index: 999;
+}
 
     /* Zobrazení mobilního menu, když je aktivní */
     .mobile-menu.show {
