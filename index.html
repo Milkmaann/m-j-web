@@ -13,28 +13,16 @@
         color: #333;
         line-height: 1.7;
     }
-   navbar {
-    background-color: #000;
-    color: white;
-    padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    height: 40px;
-    box-sizing: border-box;
-    z-index: 1000;
-}
-        /* Desktopové menu */
-.desktop-menu {
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
+   nav {
+        background-color: #000;
+        padding: 10px 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-sizing: border-box;
+    }
 
 
     .nav-container {
@@ -60,22 +48,17 @@
         text-decoration: none;
         font-size: 1rem;
     }
-    * Hamburger - skrytý v desktopové verzi */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 25px;
-    height: 20px;
-    cursor: pointer;
-}
-
-.hamburger div {
-    background-color: white;
-    height: 4px;
-    width: 100%;
-    border-radius: 2px;
-}
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 4px 0;
+    }
     .mobile-menu {
         display: none;
         flex-direction: column;
@@ -160,39 +143,30 @@
 .hero-image:hover img {
     transform: scale(1.1);
 }
-    /* Responzivní styl pro mobilní zobrazení */
-@media screen and (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-    .desktop-menu {
-        display: none;
-    }
-}
-
-/* Skrytí mobilního menu na začátku */
-.mobile-menu {
-    position: fixed;
-    top: 40px; /* nebo podle skutečné výšky headeru */
-    left: 0;
-    width: 100%;
-    background-color: #000;
-    display: none;
-    flex-direction: column;
-    padding: 10px 20px;
-    z-index: 999;
-}
-
-/* Zobrazení mobilního menu, když je aktivní */
-.mobile-menu.show {
-    display: flex;
-}
-
-/* Styl pro odkazy v mobilním menu */
-.mobile-menu li {
-    padding: 10px 0;
-    text-align: center;
-}
+    @media (max-width: 768px) {
+        .hero {
+            flex-direction: column;
+        }
+        .hero-text, .hero-image {
+            flex: 1 1 100%;
+            text-align: center;
+        }
+        .hero-image img {
+            width: 100%;
+        }
+        nav ul.desktop-menu {
+            display: none;
+        }
+        .hamburger {
+            display: flex;
+        }
+        main {
+            padding: 0 20px;
+        }
+        section p {
+            text-align: left;
+            font-size: 1.1rem;
+        }
     }
     footer {
         text-align: center;
@@ -204,33 +178,32 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
-    <div class="logo">
-        <a href="index.html" class="brand">Logo</a>
-    </div>
-    <!-- Desktopové menu -->
-    <ul class="desktop-menu">
-        <li><a href="index.html">Úvod</a></li>
-        <li><a href="o-nas.html">O nás</a></li>
-        <li><a href="sluzby.html">Služby</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-    </ul>
-
-    <!-- Hamburger menu pro mobilní verzi -->
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-</nav>
-
-<!-- Mobilní menu (skryté na začátku) -->
-<ul class="mobile-menu">
-    <li><a href="index.html">Úvod</a></li>
-    <li><a href="o-nas.html">O nás</a></li>
-    <li><a href="sluzby.html">Služby</a></li>
-    <li><a href="kontakt.html">Kontakt</a></li>
-</ul>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="životopis.html">Mgr. Ladislav Viščur</a>
+            </div>
+            <ul class="desktop-menu">
+                <li><a href="index.html">Úvod</a></li>
+                <li><a href="životopis.html">O mně</a></li>
+                <li><a href="služby.html">Služby</a></li>
+                <li><a href="otázky.html">Dotazy</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <ul class="mobile-menu">
+            <li><a href="index.html">Úvod</a></li>
+            <li><a href="životopis.html">O mně</a></li>
+            <li><a href="služby.html">Služby</a></li>
+            <li><a href="otázky.html">Dotazy</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
 
     <main>
         <section class="hero">
