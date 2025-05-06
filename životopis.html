@@ -128,16 +128,14 @@ footer {
 }
 
 /* Responzivní styl pro mobilní zobrazení */
-@media screen and (max-width: 768px) {
-    /* Skrytí desktop menu na mobilu */
-    .desktop-menu {
+@media screen and (min-width: 769px) {
+    .mobile-menu {
         display: none !important;
     }
-
-    /* Zobrazení hamburgeru na mobilu */
     .hamburger {
-        display: flex;
+        display: none;
     }
+}
 
     /* Skrytí mobilního menu na začátku */
     .mobile-menu {
