@@ -1,6 +1,7 @@
 backend:
+local_backend: true
   name: github
-  repo: https://github.com/Milkmaann/m-j-web
+  repo: Milkmaann/m-j-web
   branch: main
 
 media_folder: "static/images/uploads"
