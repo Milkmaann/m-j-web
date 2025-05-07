@@ -1,7 +1,7 @@
 backend:
-  name: github
+  name: git-gateway
   repo: Milkmaann/m-j-web
-  branch: main
+  branch: gh-pages
   
 media_folder: assets/img
 public_folder: /img
