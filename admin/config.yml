@@ -1,3 +1,7 @@
+backend:
+  name: github
+  repo: Milkmaann/m-j-web
+  branch: main
 media_folder: assets/img
 public_folder: /img
 
