@@ -5,32 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  <h2>You have been invited</h2>
-
-<p>
-  You have been invited to create a user on {{ .SiteURL }}. Follow
-  this link to accept the invite:
-</p>
-<p><a href="{{ .ConfirmationURL }}">Accept the invite</a></p>
-
-<h2>Confirm your signup</h2>
-
-<p>Follow this link to confirm your user:</p>
-<p><a href="{{ .ConfirmationURL }}">Confirm your mail</a></p>
-
-  <h2>Reset Password</h2>
-
-<p>Follow this link to reset the password for your user:</p>
-<p><a href="{{ .ConfirmationURL }}">Reset Password</a></p>
-
-
-  <h2>Confirm Change of Email</h2>
-
-<p>
-  Follow this link to confirm the update of your email from 
-  {{ .Email }} to {{ .NewEmail }}:
-</p>
-<p><a href="{{ .ConfirmationURL }}">Change Email</a></p>
+  <link rel="dns-prefetch" href="https://identity.netlify.com">
+  <script async="async" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 </head>
 
