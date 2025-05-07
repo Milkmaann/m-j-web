@@ -3,23 +3,58 @@ backend:
   repo: Milkmaann/m-j-web
   branch: main
   
-publish_mode: editorial_workflow
-media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
-public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+media_folder: assets/img
+public_folder: /img
 
 collections:
-
-name: "posts" # Used in routes, e.g., /admin/collections/blog
-      label: "posts" # Used in the UI
-      folder: "content/posts" # The path to the folder where the documents are stored
-      create: true # Allow users to create new documents in this collection
-      slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-      fields: # The fields for each document, usually in front matter
-        - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Publish Date", name: "date", widget: "datetime"}
-        - {label: "Featured Image", name: "thumbnail", widget: "image", required: FALSE}
-        - {label: "Body", name: "body", widget: "markdown"}
-        - {label: "Tags", name: "tags", widget: "string"}
-  
-
+  - name: 'projects'
+    label: 'Projects'
+    folder: 'content/projects'
+    format: 'frontmatter'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - {
+          label: 'Short Descripcion',
+          name: 'short_description',
+          widget: 'string',
+        }
+      - {
+          label: 'Long Description',
+          name: 'long_description',
+          widget: 'string',
+        }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'select',
+          multiple: true,
+          min: 1,
+          max: 3,
+          options: ['Social Media Design', 'Web Design', 'Art Direction'],
+        }
+      - {
+          label: 'Thumbnail',
+          name: 'thumbnail',
+          widget: 'image',
+          allow_multiple: false,
+        }
+      - label: 'Project Images'
+        name: 'images'
+        widget: 'object'
+        fields:
+          - {
+              label: 'RRSS Images',
+              name: 'rrss',
+              widget: 'image',
+              allow_multiple: true,
+            }
+          - {
+              label: 'WEB Images',
+              name: 'web',
+              widget: 'image',
+              allow_multiple: true,
+            }
