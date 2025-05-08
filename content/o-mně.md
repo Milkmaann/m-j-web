@@ -16,6 +16,9 @@ body {
     background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
     color: #333;
 }
+
+
+```
 .navbar {
     background-color: #000;
     color: white;
@@ -105,7 +108,7 @@ footer {
     font-size: 0.9rem;
     background: white;
 }
-    /\* Základní styly pro desktop menu \*/
+    /\\* Základní styly pro desktop menu \\*/
 .desktop-menu {
     display: flex;
     gap: 30px;
@@ -148,9 +151,6 @@ footer {
         display: none;
     }
 }
-
-```
-
 ```
 
 }
