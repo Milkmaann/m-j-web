@@ -217,7 +217,7 @@ overflow: hidden;
     <section class="hero">
         <div class="hero-text">
             <h1>Volnočasové aktivity pro děti s poruchou autistického spektra</h1>
-            <p>Vaše důvěra – moje poslání</p>
+            <p>Vaše důvěra – moje poslání2222</p>
             <p>
                 Od roku 2016 se specializuji na práci s dětmi na spektru. Pomáhám jim objevovat své možnosti, růst a nacházet radost v každodenním životě.
             </p>
